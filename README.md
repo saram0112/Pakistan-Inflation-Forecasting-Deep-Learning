@@ -1,10 +1,10 @@
-# 📊 Deep Learning Inflation Prediction
+# Deep Learning Inflation Prediction
 
 > A complete end-to-end pipeline for predicting inflation (CPI) using 5 deep learning architectures — LSTM, GRU, Bidirectional LSTM, CNN-LSTM, and Transformer — with a live Flask web application that forecasts up to 24 months ahead.
 
 ---
 
-## 📋 Table of Contents
+## Table of Contents
 
 - [Project Overview](#project-overview)
 - [Demo](#demo)
@@ -26,7 +26,7 @@
 
 ---
 
-## 🔍 Project Overview
+## Project Overview
 
 This project builds a **production-ready inflation forecasting system** using multiple deep learning architectures trained on over 60 years of US Consumer Price Index (CPI) data. The system goes beyond a simple notebook experiment — it includes a complete data pipeline, five trained neural networks, an ensemble combiner, and a live web dashboard where users can forecast inflation up to 24 months into the future.
 
@@ -40,7 +40,7 @@ This project approaches it as a **time series regression problem** — given the
 
 ---
 
-## 🎬 Demo
+## Demo
 
 ```
 Settings : Forecast Horizon = 6 months  |  Model = Ensemble
@@ -55,12 +55,12 @@ Month 4 Forecast   : CPI = 318.90  |  Inflation = 3.0%
 Month 5 Forecast   : CPI = 319.85  |  Inflation = 2.9%
 Month 6 Forecast   : CPI = 320.70  |  Inflation = 2.8%
 ─────────────────────────────────────────────────────────
-Trend Signal       : FALLING  ✅ (moving toward 2% target)
+Trend Signal       : FALLING  (moving toward 2% target)
 ```
 
 ---
 
-## 🏗️ Project Architecture
+## Project Architecture
 
 ```
 CPI Data (FRED — Federal Reserve Economic Data)
@@ -91,7 +91,7 @@ Flask REST API → Interactive Web Dashboard
 
 ---
 
-## 📊 Dataset
+## Dataset
 
 | Property | Details |
 |----------|---------|
@@ -135,7 +135,7 @@ Training across all regimes gives the model historical context for extreme event
 
 ---
 
-## 💡 What is CPI and Why Does It Matter?
+## What is CPI and Why Does It Matter?
 
 **CPI (Consumer Price Index)** measures the average change over time in the prices paid by urban consumers for a basket of goods and services — food, housing, clothing, transportation, medical care, and more.
 
@@ -209,7 +209,7 @@ Inflation has well-documented seasonal patterns — food prices rise in certain 
 
 ---
 
-## 🧠 Deep Learning Models
+## Deep Learning Models
 
 All models use:
 - **Loss function**: Huber Loss (more robust to CPI spikes than MSE)
@@ -361,7 +361,7 @@ Where Q (Query), K (Key), V (Value) are learned linear projections of the input.
 
 ---
 
-## 🔗 Ensemble Method
+## Ensemble Method
 
 After all five models are trained independently, their predictions are combined:
 
@@ -394,7 +394,7 @@ Each model's weaknesses are partially compensated by the others' strengths in th
 
 ---
 
-## 📏 Evaluation Metrics
+## Evaluation Metrics
 
 | Metric | Formula | Interpretation for CPI |
 |--------|---------|------------------------|
@@ -407,7 +407,7 @@ For CPI forecasting, **MAPE** is the most meaningful metric because CPI values c
 
 ---
 
-## 🌐 Web Application
+## Web Application
 
 Built with **Flask** (backend) and **Chart.js** (frontend).
 
@@ -456,7 +456,7 @@ GET /predict?steps=6&model=ensemble
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 inflation-prediction/
@@ -553,7 +553,7 @@ requests>=2.28.0
 
 ---
 
-## ▶️ How to Run
+## How to Run
 
 Run notebooks **strictly in order**. Each saves files the next one needs.
 
@@ -604,7 +604,7 @@ jupyter notebook 03_deep_learning_models.ipynb
 - Saves each model in `.keras` format
 - Plots all training curves side by side
 
-> ⏱️ **Training time**: 10–30 minutes depending on hardware. Monthly data is much smaller than daily stock data so this is faster. Google Colab free GPU typically completes in under 15 minutes.
+> **Training time**: 10–30 minutes depending on hardware. Monthly data is much smaller than daily stock data so this is faster. Google Colab free GPU typically completes in under 15 minutes.
 
 **Output:** `models/*.keras`, `plots/training_curves.png`
 
@@ -646,7 +646,7 @@ http://localhost:5000
 
 ---
 
-## 📊 Results
+## Results
 
 ### Model Performance on Test Set (2021–2024, includes COVID inflation spike)
 
@@ -683,7 +683,7 @@ Error grows with forecast horizon — this is expected and consistent with how p
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 | Category | Tools |
 |----------|-------|
@@ -699,7 +699,7 @@ Error grows with forecast horizon — this is expected and consistent with how p
 
 ---
 
-## 💡 Key Learnings
+## Key Learnings
 
 **1. Macroeconomic time series is very different from financial price series**
 Stock prices move daily and are highly noisy. CPI moves monthly and is smoother — but regime changes (like 2021–2022) are far more extreme in percentage terms. This required Huber loss instead of MSE and larger patience values in EarlyStopping.
@@ -718,7 +718,7 @@ Adding Month and Quarter as features consistently improved validation loss. Infl
 
 ---
 
-## 📌 Possible Extensions
+## Possible Extensions
 
 - [ ] Add more economic indicators: unemployment rate, PPI, M2 money supply, Fed funds rate
 - [ ] Train separate models for different CPI sub-components (food, energy, shelter, core CPI)
@@ -730,7 +730,7 @@ Adding Month and Quarter as features consistently improved validation loss. Infl
 
 ---
 
-## ⚠️ Disclaimer
+## Disclaimer
 
 **This project is strictly for educational and research purposes.**
 
@@ -740,7 +740,7 @@ CPI forecasting is a complex macroeconomic problem that professional institution
 
 ---
 
-## 👤 Author
+## Author
 
 **Your Name**
 - LinkedIn: [linkedin.com/in/yourprofile](https://linkedin.com/in/yourprofile)
@@ -749,7 +749,7 @@ CPI forecasting is a complex macroeconomic problem that professional institution
 
 ---
 
-## 📄 License
+## License
 
 This project is licensed under the MIT License.
 
@@ -775,4 +775,4 @@ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
 
 ---
 
-⭐ **If this project helped you understand inflation forecasting or deep learning for economics, please give it a star!** ⭐
+**If this project helped you understand inflation forecasting or deep learning for economics, please give it a star!** ⭐
